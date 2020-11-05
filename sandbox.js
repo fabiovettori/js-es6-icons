@@ -125,7 +125,7 @@ $(document).ready(function(){
 // Utilizzando la funzione forEach e il template
 // literal, visualizzare in pagina tutte le icone con il proprio nome.
 
-icons.forEach(function(icon){
+icons.forEach((icon) => {
 
     let {name, prefix, type, family} = icon;
 
@@ -142,10 +142,10 @@ icons.forEach(function(icon){
 // definire un array di colori e associare ad ogni
 // tipo di icona un colore.
 // Visualizzare le icone di colore diverso in base al tipo.
-    let iconsColors = ['red', 'blue', 'green'];
+    let iconsColors = ['red', 'green', 'blue'];
     let iconsType = [];
 
-    icons.forEach(function(icon){
+    icons.forEach((icon) => {
 
         let {type} = icon;
 
@@ -155,21 +155,20 @@ icons.forEach(function(icon){
     });
     console.log(iconsType);
 
-// devo riuscire ad associare:
-// let iconsColors = ['red', 'green', 'blue'];
-// let iconsType = ['animal', 'vegetable', 'user'];
-// animal = ready
-// vegetables = green
-// user = blue
 
-let iconProprieties = [];
+    icons.forEach((icon, i) => {
+        // vado ad estrapolare la proprietà tipo da ogni icona
+        let typeValue = icon['type'];
 
-    iconsColors.forEach(function(color, i){
-        let colorPropriety = {color};
-        iconProprieties.push(colorPropriety);
+        // vado ad incrociare il valore del tipo trovato con l'indice dell'array dei tipi
+        let index = iconsType.indexOf(typeValue);
 
+        // visto che ho una associazione 1:1 => tipo-colore posso andare ad associare l'indice del tipo trovato al passaggio precedene con l'indice del colore del gruppo dei colori
+        let color = iconsColors[index];
+
+        // vado infine ad associare il colore trovato all'elemento html corrispondete
+        $('.icon-container i').eq(i).css('color', iconsColors[index]);
     });
-    console.log(iconProprieties);
-    // console.log(iconProprieties);
+
 
 });
