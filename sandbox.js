@@ -181,8 +181,36 @@ icons.forEach((icon) => {
     iconsType.forEach((icoType, i) => {
         let typeVar = iconsType[i];
 
-        $('.filter select').append(`<option value="">${typeVar}</option>`);
+        $('.filter select').append(`<option value="${typeVar}">${typeVar}</option>`);
+    });
 
+
+    icons.forEach((icon, i) => {
+        let {type} = icon;
+        $('.icon-container i').eq(i).addClass(type);
+    });
+
+
+    let userFilter = $('.filter select').change(function(){
+        let result = $('.filter select').val();
+        console.log(result);
+
+        icons.forEach( (icons, i) => {
+
+            let classSelection = $('.icon-container i').eq(i).hasClass(result);
+
+            const classDefault = 'all';
+
+            if (!classSelection && result != classDefault) {
+                $('.icon-container').eq(i).fadeOut();
+
+            } else if (classSelection){
+                $('.icon-container').eq(i).fadeIn();
+
+            } else {
+                $('.icon-container').eq(i).fadeIn();
+            }
+        });
     });
 
 });
