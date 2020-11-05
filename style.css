@@ -12,6 +12,11 @@ body {
 main {
     height: 100vh;
     display: flex;
+    align-items: center;
+}
+
+.icon {
+    display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -27,4 +32,14 @@ main {
 
 .fas {
     font-size: 80px;
+}
+
+.filter {
+    text-align: right;
+    margin-right: 80px;
+}
+
+.filter select {
+    width: 200px;
+    height: 30px;
 }

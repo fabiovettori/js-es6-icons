@@ -135,7 +135,7 @@ icons.forEach((icon) => {
         <p>${name}</p>
      </div>`;
 
-    $('main').append(icon_view);
+    $('.icon').append(icon_view);
 });
 
 // milestone 2:
@@ -170,5 +170,19 @@ icons.forEach((icon) => {
         $('.icon-container i').eq(i).css('color', iconsColors[index]);
     });
 
+
+// milestone 3:
+// aggiungere una select per filtrare le icone in
+// base al tipo.
+// Popolare le options della select dinamicamente
+// e, ogni volta che cambia il valore selezionato,
+// visualizzare le icone corrispondenti.
+
+    iconsType.forEach((icoType, i) => {
+        let typeVar = iconsType[i];
+
+        $('.filter select').append(`<option value="">${typeVar}</option>`);
+
+    });
 
 });
