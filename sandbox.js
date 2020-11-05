@@ -191,7 +191,7 @@ icons.forEach((icon) => {
     });
 
 
-    let userFilter = $('.filter select').change(function(){
+    $('.filter select').change(function(){
         let result = $('.filter select').val();
         console.log(result);
 
@@ -202,13 +202,13 @@ icons.forEach((icon) => {
             const classDefault = 'all';
 
             if (!classSelection && result != classDefault) {
-                $('.icon-container').eq(i).fadeOut();
+                $('.icon-container').eq(i).hide();
 
             } else if (classSelection){
-                $('.icon-container').eq(i).fadeIn();
+                $('.icon-container').eq(i).show();
 
             } else {
-                $('.icon-container').eq(i).fadeIn();
+                $('.icon-container').eq(i).show();
             }
         });
     });
