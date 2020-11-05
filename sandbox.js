@@ -155,6 +155,21 @@ icons.forEach(function(icon){
     });
     console.log(iconsType);
 
+// devo riuscire ad associare:
+// let iconsColors = ['red', 'green', 'blue'];
+// let iconsType = ['animal', 'vegetable', 'user'];
+// animal = ready
+// vegetables = green
+// user = blue
 
+let iconProprieties = [];
+
+    iconsColors.forEach(function(color, i){
+        let colorPropriety = {color};
+        iconProprieties.push(colorPropriety);
+
+    });
+    console.log(iconProprieties);
+    // console.log(iconProprieties);
 
 });
