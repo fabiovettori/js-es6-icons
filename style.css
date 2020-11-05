@@ -8,3 +8,23 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.fas {
+    font-size: 80px;
+}
