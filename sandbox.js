@@ -136,8 +136,25 @@ icons.forEach(function(icon){
      </div>`;
 
     $('main').append(icon_view);
-
 });
+
+// milestone 2:
+// definire un array di colori e associare ad ogni
+// tipo di icona un colore.
+// Visualizzare le icone di colore diverso in base al tipo.
+    let iconsColors = ['red', 'blue', 'green'];
+    let iconsType = [];
+
+    icons.forEach(function(icon){
+
+        let {type} = icon;
+
+        if (!iconsType.includes(type)) {
+            iconsType.push(type);
+        }
+    });
+    console.log(iconsType);
+
 
 
 });
